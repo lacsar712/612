@@ -39,7 +39,7 @@ public class SecurityConfig {
         .sessionManagement(configurer -> configurer.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
         .authorizeHttpRequests(authorize -> authorize
             .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
-            .requestMatchers("/auth/login", "/error").permitAll()
+            .requestMatchers("/auth/login", "/error", "/actuator/health").permitAll()
             .anyRequest().authenticated()
         )
         .exceptionHandling(configurer -> configurer
