@@ -1,0 +1,23 @@
+server:
+  port: 48123
+  servlet:
+    context-path: /api-7f3b2
+
+spring:
+  datasource:
+    url: jdbc:postgresql://db:5432/lianzhi_wms
+    username: wms_user
+    password: wms_pass_7f3b2
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        jdbc:
+          time_zone: UTC
+  jackson:
+    time-zone: UTC
+
+app:
+  cors:
+    allowed-origins: "*"
